@@ -5,5 +5,3 @@
   </main>
 </template>
 
-<script>
-</script>
