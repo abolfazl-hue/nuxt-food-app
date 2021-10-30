@@ -1,5 +1,7 @@
 <template>
-  <h1>This is about page</h1>
+  <footer>
+      <p>Abolfazl jalildoost 2021</p>
+  </footer>
 </template>
 
 <script>
