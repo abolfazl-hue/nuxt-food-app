@@ -18,7 +18,9 @@
                             <h4>{{menuItem.item}}</h4>
                             <p>${{menuItem.price}}</p>
                         </div>
-                        <button class="ghost">View item ></button>
+                        <nuxt-link :to="`/items/${menuItem.id}`">
+                          <button class="ghost">View item ></button>
+                        </nuxt-link>
                     </div>
                </div>
           </div>
