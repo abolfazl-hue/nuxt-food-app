@@ -10,7 +10,7 @@
             <h3>price : ${{currentItem.price}}</h3>
             <div class="quantity">
                 <input type="number" min="1" v-model="count">
-                <button class="primary">Add to Cart - ${{updatedPrice}}</button>
+                <button class="primary" @click="addToCart">Add to Cart - ${{updatedPrice}}</button>
             </div>
 
             <fieldset v-if="currentItem.options">
@@ -43,6 +43,7 @@
                     <label :for="addon">{{ addon }}</label>
                 </div>
             </fieldset>
+            <Toast v-if="orderSubmitted" />
         </section>
 
         <section class="options">
@@ -62,7 +63,8 @@ export default {
             count : 1,
             itemOptions: "",
             itemAddons: [],
-            itemSizeAndCost: []
+            itemSizeAndCost: [],
+            orderSubmitted : false
         }
     },
 
@@ -82,6 +84,12 @@ export default {
         updatedPrice(){
             let price =  this.currentItem.price * this.count
             return price.toFixed(2)
+        }
+    },
+
+    methods: {
+        addToCart() {
+            this.orderSubmitted = true
         }
     },
 }
