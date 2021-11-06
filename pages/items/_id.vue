@@ -89,7 +89,16 @@ export default {
 
     methods: {
         addToCart() {
+            const order = {
+                item : this.currentItem.item,
+                price : this.updatedPrice,
+                count : this.count,
+                itemOptions : this.itemOptions,
+                itemAddons : this.itemAddons
+            }
+
             this.orderSubmitted = true
+            this.$store.commit('ADD_TO_CART', order)
         }
     },
 }
